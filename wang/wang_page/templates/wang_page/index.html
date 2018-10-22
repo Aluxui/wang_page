@@ -1,0 +1,117 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>WANG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'wang_page/style.css' %}">
+</head>
+<body id="top">
+<!--
+        {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+        <li><a href="{% url 'wang_page:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+-->
+<div class="bgded overlay"> 
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <div id="logo" class="fl_left">
+        <h1><a href="/wang_page">WANG</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Inicio</a></li>
+          <li><a href="#">Teoremas Registrados</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+      <h3 class="heading">Probador de Teoremas Wang</h3>
+      <p>Introduzca el teorema a probar</p>
+      <footer>
+        <form class="group" method="post" action="#">
+          
+        </form>
+
+        <form action="{% url 'wang_page:teorema' %}" method="post" class="group">
+                {% csrf_token %}
+                <fieldset>
+                        <legend>Teorema:</legend>
+                        <input type="text" value="" placeholder="Teorema">
+                        <button class="fas fa-sign-in-alt" type="submit" title="Submit"><em>Enviar</em></button>
+                      </fieldset>
+        </form>
+
+      </footer>
+    </article>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <section id="introblocks">
+      <div class="sectiontitle">
+        <h6 class="heading">Equipo</h6>
+        <p>Programadores creadores del proyecto</p>
+      </div>
+      <ul class="nospace group">
+        <li class="one_quarter first">
+          <article><a href="#"><i class="fas fa-golf-ball"></i></a>
+            <h6 class="heading">Andres Gutierres</h6>
+            <p>Estudiante Universidad Nacional de Costa Rica</p>
+            <footer><a class="btn" href="#">Detalles</a></footer>
+          </article>
+        </li>
+        <li class="one_quarter">
+          <article><a href="#"><i class="fas fa-ribbon"></i></a>
+            <h6 class="heading">Adrian Prendas</h6>
+            <p>Estudiante Universidad Nacional de Costa Rica</p>
+            <footer><a class="btn" href="#">Detalles</a></footer>
+          </article>
+        </li>
+        <li class="one_quarter">
+          <article><a href="#"><i class="fas fa-tablets"></i></a>
+            <h6 class="heading">Carlos Murillo</h6>
+            <p>Estudiante Universidad Nacional de Costa Rica</p>
+            <footer><a class="btn" href="#">Detalles</a></footer>
+          </article>
+        </li>
+        <li class="one_quarter">
+          <article><a href="#"><i class="fas fa-wine-glass"></i></a>
+            <h6 class="heading">Alejandro S&aacute;nchez</h6>
+            <p>Estudiante Universidad Nacional de Costa Rica</p>
+            <footer><a class="btn" href="#">Detalles</a></footer>
+          </article>
+        </li>
+      </ul>
+    </section>
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Probador WANG 2018</a></p>
+    <p class="fl_right">Universidad Nacional de Costa Rica</p>
+  
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
